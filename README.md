@@ -1,3 +1,6 @@
+## Team Name - Rogers 
+## Team Members - Harsh Tambade, Suchita Nigam, Darsh Kalathiya, BharatKumar Gangoman
+## Problem statement - Expense Management
 # SpendSense AI - Intelligent Expense Management Platform
 
 ![SpendSense AI](https://img.shields.io/badge/SpendSense-AI%20Powered-blue)
