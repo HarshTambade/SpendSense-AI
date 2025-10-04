@@ -1,197 +1,277 @@
-# SpendSense AI - Smart Expense Management Platform
+# SpendSense AI - Intelligent Expense Management Platform
 
-An AI-powered expense management platform with intelligent approvals, OCR receipt processing, and real-time analytics.
+![SpendSense AI](https://img.shields.io/badge/SpendSense-AI%20Powered-blue)
+![Status](https://img.shields.io/badge/Status-Live-success)
+![License](https://img.shields.io/badge/License-MIT-green)
 
-## 🚀 Features
+## 🚀 Live Demo
 
-### Core Functionality
-- **Smart Expense Submission**: Upload receipts with OCR text extraction
-- **AI-Powered Risk Analysis**: Automatic fraud detection and risk scoring
-- **Multi-Level Approval Workflows**: Sequential approval chains with role-based access
-- **Real-Time Analytics**: Interactive dashboards with spending insights
-- **Currency Conversion**: Automatic exchange rate conversion for international expenses
-- **Policy Suggestions**: AI-generated policy recommendations based on spending patterns
+- **Frontend**: [https://real-banks-prove.lindy.site](https://real-banks-prove.lindy.site)
+- **Backend API**: [https://itchy-hats-own.lindy.site](https://itchy-hats-own.lindy.site)
 
-### Role-Based Dashboards
-- **Employee Dashboard**: Submit expenses, track status, view history
-- **Manager Dashboard**: Review and approve team expenses with AI risk insights
-- **Admin Dashboard**: Company-wide analytics, user management, policy oversight
+## 🔐 Demo Login Credentials
 
-### AI Integrations
-- **OCR Processing**: Hugging Face API for receipt text extraction
-- **Risk Scoring**: ML-based fraud detection and anomaly detection
-- **Category Classification**: Automatic expense categorization
-- **Spending Insights**: AI-powered analytics and recommendations
+Test the application with these pre-configured accounts:
 
-## 🛠️ Tech Stack
+### 🔴 Admin Account
+- **Email**: `admin@spendsense.com`
+- **Password**: `Admin@123`
+- **Access**: Full system access, company analytics, user management, AI insights
 
-### Backend
-- **FastAPI**: High-performance Python web framework
-- **PostgreSQL**: Relational database with SQLAlchemy ORM
+### 🟡 Manager Account
+- **Email**: `manager@spendsense.com`
+- **Password**: `Manager@123`
+- **Access**: Team expense approvals, AI risk analysis, department analytics
+
+### 🟢 Employee Account
+- **Email**: `employee@spendsense.com`
+- **Password**: `Employee@123`
+- **Access**: Submit expenses, upload receipts, track approval status
+
+---
+
+## 📋 Overview
+
+SpendSense AI is a comprehensive expense management platform that leverages artificial intelligence to streamline expense tracking, automate approvals, detect fraud, and provide real-time insights into company spending patterns.
+
+## ✨ Key Features
+
+### 🤖 AI-Powered Intelligence
+- **Smart Risk Scoring**: Automatic fraud detection with ML-based risk analysis
+- **OCR Receipt Scanning**: Extract data from receipts using advanced OCR
+- **Spending Insights**: AI-generated recommendations and pattern analysis
+- **Policy Suggestions**: Intelligent expense policy recommendations
+
+### 💼 Expense Management
+- **Multi-level Approvals**: Configurable approval workflows
+- **Real-time Tracking**: Live expense status updates
+- **Receipt Management**: Upload and store receipt images
+- **Expense Categories**: Organized expense categorization
+
+### 📊 Analytics & Reporting
+- **Interactive Dashboards**: Role-based analytics views
+- **Spending Trends**: Visual spending pattern analysis
+- **Custom Reports**: Generate detailed expense reports
+- **Export Capabilities**: Download reports in multiple formats
+
+### 🌍 Global Support
+- **Multi-Currency**: Automatic currency conversion
+- **Real-time Exchange Rates**: Live currency rate updates
+- **Country-specific Policies**: Localized expense policies
+
+### 🔒 Security & Compliance
 - **JWT Authentication**: Secure token-based authentication
-- **Pydantic**: Data validation and serialization
-- **Passlib + Bcrypt**: Password hashing
+- **Role-based Access Control**: Admin, Manager, Employee roles
+- **Password Encryption**: Bcrypt password hashing
+- **Audit Trails**: Complete expense history tracking
 
-### Frontend
-- **Next.js 14**: React framework with App Router
-- **TypeScript**: Type-safe development
-- **Tailwind CSS**: Utility-first CSS framework
-- **shadcn/ui**: Beautiful UI components
-- **Recharts**: Data visualization
+## 🏗️ Technical Architecture
 
-### External APIs
-- **Hugging Face**: OCR and NLP processing
-- **Exchange Rate API**: Real-time currency conversion
-- **REST Countries API**: Country information
+### Backend (FastAPI + PostgreSQL)
+```
+backend/
+├── app/
+│   ├── core/           # Security, config
+│   ├── models/         # SQLAlchemy models
+│   ├── routers/        # API endpoints
+│   ├── schemas/        # Pydantic schemas
+│   ├── services/       # Business logic
+│   └── main.py         # FastAPI application
+```
 
-## 📦 Installation
+**Tech Stack:**
+- FastAPI 0.104.1
+- PostgreSQL (SQLAlchemy ORM)
+- JWT Authentication
+- Bcrypt password hashing
+- Hugging Face API integration
+- External APIs (Exchange rates, Countries)
+
+### Frontend (Next.js 14 + TypeScript)
+```
+frontend/
+├── app/
+│   ├── dashboard/      # Role-based dashboards
+│   ├── login/          # Authentication pages
+│   ├── signup/
+│   └── page.tsx        # Landing page
+├── components/         # Reusable UI components
+├── contexts/           # React contexts
+└── hooks/              # Custom React hooks
+```
+
+**Tech Stack:**
+- Next.js 14 (App Router)
+- TypeScript
+- Tailwind CSS
+- shadcn/ui components
+- Lucide React icons
+- Motion animations
+
+## 🎨 UI Features
+
+### Professional Landing Page
+- Modern hero section with gradient design
+- Interactive dashboard preview
+- Feature showcase with icons
+- Statistics and benefits section
+- Call-to-action sections
+- Professional footer
+
+### Enhanced Authentication
+- Split-screen design
+- Glassmorphism effects
+- Animated backgrounds
+- Icon-enhanced inputs
+- Password visibility toggle
+- Remember me functionality
+
+### Role-based Dashboards
+- **Admin Dashboard**: Company analytics, user management, AI insights
+- **Manager Dashboard**: Team approvals, risk analysis, department stats
+- **Employee Dashboard**: Expense submission, history, status tracking
+
+## 🚀 Getting Started
 
 ### Prerequisites
 - Python 3.10+
 - Node.js 18+
-- PostgreSQL 14+
+- PostgreSQL
+- Bun (optional, for faster package management)
 
 ### Backend Setup
 
-1. Create PostgreSQL database:
+1. **Create Database**
 ```bash
 createdb -h localhost spendsense_db
 ```
 
-2. Install Python dependencies:
+2. **Install Dependencies**
 ```bash
 cd backend
 pip install -r requirements.txt
 ```
 
-3. Configure environment variables:
+3. **Configure Environment**
 ```bash
-cp .env.example .env
-# Edit .env with your configuration
+# Set database connection
+export DATABASE_URL="postgresql://user:password@localhost:5432/spendsense_db"
+export SECRET_KEY="your-secret-key"
+export HUGGINGFACE_API_KEY="your-hf-api-key"
 ```
 
-4. Run database migrations:
+4. **Run Backend**
 ```bash
-python -m alembic upgrade head
-```
-
-5. Start the backend server:
-```bash
-uvicorn app.main:app --host 0.0.0.0 --port 8000
+cd backend
+python3 -m uvicorn app.main:app --host 0.0.0.0 --port 8000
 ```
 
 ### Frontend Setup
 
-1. Install dependencies:
+1. **Install Dependencies**
 ```bash
 cd frontend
 npm install
+# or
+bun install
 ```
 
-2. Configure environment:
+2. **Configure Environment**
 ```bash
-cp .env.local.example .env.local
-# Edit .env.local with your API URL
-```
-
-3. Start the development server:
-```bash
-npm run dev
-```
-
-## 🔑 Environment Variables
-
-### Backend (.env)
-```
-DATABASE_URL=postgresql://user:password@localhost:5432/spendsense_db
-SECRET_KEY=your-secret-key
-ALGORITHM=HS256
-ACCESS_TOKEN_EXPIRE_MINUTES=30
-HUGGINGFACE_API_KEY=your-huggingface-api-key
-```
-
-### Frontend (.env.local)
-```
+# Create .env.local
 NEXT_PUBLIC_API_URL=http://localhost:8000
 ```
 
-## 📱 Usage
-
-### Creating an Account
-1. Navigate to `/signup`
-2. Enter company details and admin credentials
-3. Complete registration to access the admin dashboard
-
-### Submitting an Expense (Employee)
-1. Log in to your employee account
-2. Click "Submit Expense" on the dashboard
-3. Fill in expense details and upload receipt
-4. Submit for approval
-
-### Approving Expenses (Manager/Admin)
-1. Navigate to the dashboard
-2. Review pending approvals with AI risk scores
-3. Approve or reject with comments
-
-### Viewing Analytics (Admin)
-1. Access the Admin Dashboard
-2. View spending by category, vendor, and time period
-3. Review AI-generated insights and policy suggestions
-
-## 🏗️ Project Structure
-
-```
-spendsense-ai/
-├── backend/
-│   ├── app/
-│   │   ├── core/          # Security, config
-│   │   ├── models/        # Database models
-│   │   ├── routers/       # API endpoints
-│   │   ├── schemas/       # Pydantic schemas
-│   │   └── main.py        # FastAPI app
-│   ├── uploads/           # Receipt storage
-│   └── requirements.txt
-├── frontend/
-│   ├── app/               # Next.js pages
-│   ├── components/        # React components
-│   ├── contexts/          # Auth context
-│   └── lib/               # Utilities
-└── README.md
+3. **Run Frontend**
+```bash
+npm run dev
+# or
+bun dev
 ```
 
-## 🔒 Security Features
+4. **Access Application**
+```
+http://localhost:3000
+```
 
-- JWT-based authentication
-- Password hashing with bcrypt
-- Role-based access control (RBAC)
-- CORS protection
-- SQL injection prevention via ORM
-- Input validation with Pydantic
+## 📚 API Documentation
+
+### Authentication Endpoints
+- `POST /auth/signup` - Create new user account
+- `POST /auth/login` - User login
+- `GET /auth/me` - Get current user
+
+### Expense Endpoints
+- `POST /expenses/` - Create expense
+- `GET /expenses/` - List expenses
+- `GET /expenses/{id}` - Get expense details
+- `PUT /expenses/{id}` - Update expense
+- `DELETE /expenses/{id}` - Delete expense
+
+### Approval Endpoints
+- `POST /approvals/` - Create approval
+- `GET /approvals/pending` - Get pending approvals
+- `PUT /approvals/{id}/approve` - Approve expense
+- `PUT /approvals/{id}/reject` - Reject expense
+
+### Analytics Endpoints
+- `GET /analytics/company` - Company analytics
+- `GET /analytics/user/{id}` - User analytics
+- `GET /analytics/trends` - Spending trends
+
+## 🔧 Configuration
+
+### Database Models
+- **User**: User accounts with roles
+- **Company**: Company information
+- **Expense**: Expense records
+- **Approval**: Approval workflow
+- **RiskScore**: AI risk analysis
+
+### User Roles
+- **Admin**: Full system access
+- **Manager**: Team management and approvals
+- **Employee**: Basic expense submission
 
 ## 🤝 Contributing
 
 Contributions are welcome! Please follow these steps:
 
 1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
 ## 📄 License
 
-This project is licensed under the MIT License.
-
-## 👥 Authors
-
-- **Harsh Tambade** - [GitHub](https://github.com/HarshTambade)
+This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## 🙏 Acknowledgments
 
-- Hugging Face for OCR API
-- shadcn/ui for beautiful components
-- FastAPI and Next.js communities
+- FastAPI for the excellent web framework
+- Next.js for the powerful React framework
+- shadcn/ui for beautiful UI components
+- Hugging Face for AI/ML capabilities
+- PostgreSQL for reliable data storage
 
 ## 📞 Support
 
-For support, email prepaiindia@gmail.com or open an issue on GitHub.
+For support, email support@spendsense.ai or open an issue in the GitHub repository.
+
+## 🗺️ Roadmap
+
+- [ ] Mobile app (React Native)
+- [ ] Advanced AI insights
+- [ ] Integration with accounting software
+- [ ] Multi-language support
+- [ ] Advanced reporting features
+- [ ] Expense forecasting
+- [ ] Budget management
+- [ ] Team collaboration features
+
+---
+
+**Built with ❤️ by the SpendSense AI Team**
+
+**Last Updated**: October 4, 2025
