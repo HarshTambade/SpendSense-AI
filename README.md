@@ -6,8 +6,7 @@
 
 ## 🚀 Live Demo
 
-- **Frontend**: [https://real-banks-prove.lindy.site](https://real-banks-prove.lindy.site)
-- **Backend API**: [https://itchy-hats-own.lindy.site](https://itchy-hats-own.lindy.site)
+[![Watch the video](https://img.youtube.com/vi/d-wj2NMVU20/hqdefault.jpg)](https://youtu.be/d-wj2NMVU20)
 
 ## 🔐 Demo Login Credentials
 
